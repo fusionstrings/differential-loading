@@ -1,0 +1,116 @@
+{
+  "name": "differential-loading",
+  "version": "1.0.0",
+  "description": "Example of differential loading",
+  "keywords": [],
+  "homepage": "https://github.com/fusionstrings/differential-loading#readme",
+  "bugs": {
+    "url": "https://github.com/fusionstrings/differential-loading/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fusionstrings/differential-loading.git"
+  },
+  "license": "GPL-3.0",
+  "author": {
+    "name": "contact@fusionstrings.com"
+  },
+  "files": [
+    "build"
+  ],
+  "main": "build/index.cjs.js",
+  "module": "build/index.esm.js",
+  "style": "build/index.css",
+  "scripts": {
+    "build": "rollup -c",
+    "build:prod": "BABEL_ENV=production npm run build",
+    "codecov": "codecov",
+    "deploy": "npm run travis-deploy-once 'npm run semantic-release'",
+    "gc": "commit",
+    "lint": "eslint --ext .js,.jsx .",
+    "prepare1": "npm run build:prod",
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 6006",
+    "test": "BABEL_ENV=test jest src/ --no-cache",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "browser": "build/index.js",
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "(.stories)\\.(jsx)$"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "./src/setupTest.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-angular": "^7.1.2",
+    "@commitlint/prompt": "^7.1.2",
+    "@commitlint/prompt-cli": "^7.1.2",
+    "@fusionstrings/babel-preset-fusionstrings": "^2.0.0",
+    "@storybook/addon-a11y": "^3.4.11",
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-centered": "^3.4.11",
+    "@storybook/addon-console": "^1.0.4",
+    "@storybook/addon-info": "^3.4.11",
+    "@storybook/addon-options": "^3.4.11",
+    "@storybook/channels": "^3.4.11",
+    "@storybook/react": "^3.4.11",
+    "autoprefixer": "^9.1.5",
+    "babel-jest": "23.6.0",
+    "codecov": "^3.1.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "husky": "^1.0.0-rc.15",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "mdx-deck": "^1.7.7",
+    "node-sass": "^4.9.3",
+    "postcss": "^7.0.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-babel-minify": "^6.0.0",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-filesize": "^4.0.1",
+    "rollup-plugin-local-resolve": "^1.0.7",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-terser": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "semantic-release": "^15.9.16",
+    "source-map-loader": "^0.2.4",
+    "travis-deploy-once": "^5.0.8",
+    "tridev": "^0.1.2",
+    "webpack": "^4.19.1",
+    "webpack-build-notifier": "^0.1.29",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_id": "differential-loading@1.0.0",
+  "readme": "https://github.com/fusionstrings/differential-loading#readme"
+}

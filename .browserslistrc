@@ -1,0 +1,10 @@
+# extends @fusionstrings/browserslist-config
+> 0.5% in SE
+> 0.5% in GB
+> 0.5% in DE
+not android >= 0
+not samsung >= 0
+not ie >= 0
+not op_mini all >= 0
+not and_uc >= 0
+not dead
